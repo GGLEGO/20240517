@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+</head>
+
+<body>
+    <script>
+        function joinCheck() {
+
+            var id = document.join.id.value;
+            var pw = document.join.pw.value;
+            var pwcheck = document.join.pwcheck.value;
+            var username = document.join.username.value;
+            var mail = document.join.mail.value;
+            var phone = document.join.phone.value;
+
+            if (username == null || username == "") {
+                alert('이름은 필수사항입니다.');
+                document.join.username.focus();
+                return;
+                if (id == null || id == "") {
+                    alert('아이디는 필수사항입니다.');
+                    document.join.id.focus();
+                    return;
+                }
+                if (pw == null || pw == "") {
+                    alert('비밀번호는 필수사항입니다.');
+                    document.join.pw.focus();
+                    return;
+                }
+                if (pw != pwcheck) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    document.join.pw.focus();
+                    return;
+                }
+
+                document.join.submit();
+            }
+        }
+    </script>
+    <form name="join">
+        <p class="bluetext">
+            <label for="username">Name: </label>
+            <input type="text" id="username" placeholder="이름">
+            <br> Password: : <input type="text" name="pw" placeholder="비밀번호">
+            <br>Password Check : <input type="text" name="pwcheck" placeholder="비밀번호 재확인">
+            <br><br><input type="submit" onclick="joinCheck();" value="확인">
+        </p>
+    </form>
+</body>
+
+</html>

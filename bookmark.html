@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>책갈피 제작 무료 나눔</legend>
+        <label>좋아하는 색상(배경):<input type="color" value="favorcolor"></label>
+        <label><br>동물 캐릭터</label>
+        <input type="text" list="animals">
+        <form name="animal">
+            <datalist id="animals">
+            <option name="leaf" value="일반동물" label="초식동물"></option>
+            <option name="meat " value="일반동물" label="육식동물"></option>
+            <option name="panda" value="야생보호동물" label="(자이언트)판다"></option>
+            <option name="tiger" value="야생보호동물" label="뱅갈호랑이"></option>
+            <option name="turtle" value="야생보호동물" label="바다거북"></option>
+            </datalist>
+            <!--초식동물,육식동물 선택시, 동물 이름을 넣는 텍스트로 이동,
+            야생보호동물 선택시 텍스트아리아로 이동하게 수정-->
+            <script>
+                order();
+            </script>
+            <form id="box1">
+                <script>
+                    out();
+                </script>
+                동물: <input id="output" type="text">
+            </form>
+            <form id="box2">
+                <textarea name="protect" id="protect" cols="50" row="3">
+야생보호동물을 기억해 주십시오
+그리고 이 책갈피를 고른 당신의 책 구매 금액의
+일부는 한국야생동물협회에 자동으로 기부됩니다.
+                </textarea>
+            </form>
+    </fieldset>
+</body>
+
+</html>

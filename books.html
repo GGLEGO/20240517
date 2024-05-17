@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <p>
+        <table border="1">
+            <h3><span class="redtext">책을</span> 선물해드립니다</h3>
+            <h3>받을 사람 개인정보 입력</h3>
+            <caption>관련 책 종류</caption>
+            <colgroup>
+                <col with="100px" span="1" style="background-color: olivedrab;">
+                <col with="250px" style="background-color: yellowgreen;">
+                <col width="200px" style="background-color: yellow;">
+                <div>
+                    <col width="200px" style="background-color: silver;">
+                </div>
+
+            </colgroup>
+            <tr>
+                <tr>
+                    <th>책 이름</th>
+                    <th>저자</th>
+                    <th>ISBN</th>
+                    <th>구매 여부</th>
+                </tr>
+                <tr>
+                    <td>파인만, 과학을 웃겨주세요</td>
+                    <td>김성화, 권수진</td>
+                    <td>9788964960479</td>
+                    <td><label><input type="checkbox" name="choose" value="book1"></label></td>
+                </tr>
+                <tr>
+                    <td>로봇 다빈치, 꿈을 설계하다</td>
+                    <td>데니스홍(홍원서)</td>
+                    <td>9788946418370</td>
+                    <td><label><input type="checkbox" name="choose" value="book2"></label></td>
+                </tr>
+            </tr>
+        </table>
+        <!--<input type="search" autofocus required>-->
+        <input type="submit" value="검색">
+        <form oninput="result.value=parseInt(num1.value)+parseInt(num1.value)">
+            <br> 책 권수: <input type="number" name="num1" min="1" max="99" value="1"> +
+            <input type="number" name="num2" min="1" max="99" value="1"> =
+            <output name="result"></output>권
+        </form>
+        <p><input type="button" value="책갈피 선택" onclick="new_window1();"></p>
+        <script>
+            function new_window1() {
+                window.open(
+                    "bookmark.html",
+                    "책갈피 선택",
+                    "width=500, height=300, top=100, left=100"
+                );
+            }
+        </script>
+        <h3>임시 수령자 정보 등록</h3>
+        <script>
+            function joinCheck() {
+
+                var id = document.join.id.value;
+                var pw = document.join.pw.value;
+                var pwcheck = document.join.pwcheck.value;
+                var username = document.join.username.value;
+                var mail = document.join.mail.value;
+                var phone = document.join.phone.value;
+
+                if (username == null || username == "") {
+                    alert('이름은 필수사항입니다.');
+                    document.join.username.focus();
+                    return;
+                }
+                if (mail == null || mail == "") {
+                    alert('이메일 주소는 필수사항입니다.');
+                    document.join.mail.focus();
+                    return;
+                }
+                if (phone == null || phone == "") {
+                    alert('전화번호는 필수사항입니다.');
+                    document.join.phone.focus();
+                    return;
+                }
+
+                if (id == null || id == "") {
+                    alert('아이디는 필수사항입니다.');
+                    document.join.id.focus();
+                    return;
+                }
+                if (pw == null || pw == "") {
+                    alert('비밀번호는 필수사항입니다.');
+                    document.join.pw.focus();
+                    return;
+                }
+
+                if (pw != pwcheck) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    document.join.pw.focus();
+                    return;
+                }
+
+                document.join.submit();
+            }
+        </script>
+        <form name="join">
+            <p class="bluetext">
+                <label for="username">Name: </label>
+                <input type="text" id="username" placeholder="이름">
+                <br class="bluetext">
+                <label for="mail">Mail: </label>
+                <input type="text" id="mail" placeholder="이메일 주소">
+                <br class="bluetext">
+                <label for="phone">PhoneNum: </label>
+                <input type="text" id="phone" placeholder="전화번호">
+                <br> Password: : <input type="text" name="pw" placeholder="비밀번호">
+                <br>Password Check : <input type="text" name="pwcheck" placeholder="비밀번호 재확인">
+                <br><br><input type="submit" onclick="joinCheck();" value="등록">
+        </form>
+        </p>
+        <fieldset>
+            <legend>
+                <label for="sex">성별</label>
+            </legend>
+            <label><input type="radio" name = "gender" value="male">
+                    남자
+                <input type="radio" name = "gender" value="female">
+                    여자</label>
+        </fieldset>
+
+
+        <p>
+            <fieldset>
+                <legend class="greentext">배송 받을 지역</legend>
+                <label for="region">지역</label>
+                <select>
+                        <optgroup label="경기도">
+                            <option>수원특례시</option>
+                            <option>용인특례시</option>
+                            <option>인천광역시</option>
+                            <option>서울특별시</option>
+                        </optgroup>
+                        <option>강원특별자치도</option>
+                            <option>충청북도</option>
+                        <optgroup label="충청남도">
+                            <option>대전광역시</option>
+                            <option>세종특별자치시</option>
+                        </optgroup>
+                        <option>전북특별자치도</option>
+                        <option label="전라남도">
+                            <option>광주광역시</option>
+                        </option>
+                        <optgroup label="경상북도">
+                            <option>대구광역시</option>
+                        </optgroup>
+                        <optgroup label="경상남도">
+                            <option>울산광역시</option>
+                            <option>부산광역시</option>
+                        </optgroup>
+                        <option>제주특별자치도</option>
+                    </select>
+            </fieldset>
+            <h4 class="greentext">배송 수령 날짜</h4>
+            <b>기간 선택 </b>
+            <label><input type="date" id="start"> </label>
+            <label><input type="date" id="end"></label>
+            <br><br><b>시간대 선택 </b>
+            <label><input type="time" value="09:00" id = "start"> </label>
+            <label><input type="time" value="21:00" id="start"> </label>
+        </p>
+    </p>
+    <!--성별 라디오박스, 구매할 책 선택 체크박스-->
+    <h4 class="greentext">동전 및 지폐 수</h4>
+    100Won: <input type="range" min="0" max="9" value="0">
+    <br>1000Won: <input type="range" min="0" max="9" value="0">
+    <br>10000Won: <input type="range" min="0" max="9" value="0"><br><br>
+    <p><input type="button" value="주문하기" onclick="new_window2();"></p>
+    <script>
+        function new_window2() {
+            window.open(
+                "complete.html",
+                "완료",
+                "width=250, height=200, top=100, left=100"
+            );
+        }
+    </script>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.redtext {
+    /*클래스 선택자*/
+    color: red;
+    margin-top: 10px;
+}
+
+#container {
+    /*id선택자*/
+    background: gold;
+    width: 200px;
+    height: 100px;
+}
+
+p {
+    color: green;
+    /*글자색*/
+    font-style: italic;
+}
+
+p {
+    color: blue !important;
+}
+
+h3,
+h4 {
+    /*그룹선택자 수정*/
+    text-decoration: underline;
+}
+.top
+{
+    padding-top: 50%;
+    margin: 20px;
+}
